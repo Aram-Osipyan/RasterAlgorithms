@@ -19,21 +19,11 @@ namespace GradientTriangle
 
         public Line(Point first, Point second, Color firstColor, Color secondColor)
         {
-            if (first.Y >= second.Y)
-            {
-                First = first;
-                Second = second;
-                FirstColor = firstColor;
-                SecondColor = secondColor;
-            }
-            else 
-            {
-                First = second;
-                Second = first;
-                FirstColor = secondColor;
-                SecondColor = firstColor;
-            }
-            
+            First = first;
+            Second = second;
+            FirstColor = firstColor;
+            SecondColor = secondColor;
+
             Points = new List<Tuple<Point, Color>>();
             FillPoints(First.X, First.Y, Second.X, Second.Y);
             Points = Points.OrderByDescending(p => p.Item1.Y).ToList();
@@ -69,10 +59,6 @@ namespace GradientTriangle
             double doubleR = firstColor.R;
             double doubleG = firstColor.G;
             double doubleB = firstColor.B;
-            int rows = Math.Abs(y1 - y2);
-            double stepR = (double)Rdiff / rows;
-            double stepG = (double)Gdiff / rows;
-            double stepB = (double)Bdiff / rows;
 
             int dx = x2 - x1;
             int dy = y2 - y1;
@@ -82,6 +68,10 @@ namespace GradientTriangle
             int di = 2 * dy - dx;
             if (dx == 0 || Math.Abs(dy / (double)dx) > 1)
             {
+                int rows = Math.Abs(y1 - y2);
+                double stepR = (double)Rdiff / rows;
+                double stepG = (double)Gdiff / rows;
+                double stepB = (double)Bdiff / rows;
                 if (dy / (double)dx < 0)
                 {
                     xi = x2;
@@ -90,6 +80,18 @@ namespace GradientTriangle
                     int t = y1;
                     y1 = y2;
                     y2 = t;
+
+                    Rdiff = firstColor.R - secondColor.R;
+                    Gdiff = firstColor.G - secondColor.G;
+                    Bdiff = firstColor.B - secondColor.B;
+
+                    doubleR = secondColor.R;
+                    doubleG = secondColor.G;
+                    doubleB = secondColor.B;
+
+                    stepR = (double)Rdiff / rows;
+                    stepG = (double)Gdiff / rows;
+                    stepB = (double)Bdiff / rows;
                 }
 
                 for (yi = y1; yi <= y2; yi++)
@@ -112,6 +114,10 @@ namespace GradientTriangle
             }
             else
             {
+                int rows = Math.Abs(x1 - x2);
+                double stepR = (double)Rdiff / rows;
+                double stepG = (double)Gdiff / rows;
+                double stepB = (double)Bdiff / rows;
                 if (dy / (double)dx < 0)
                 {
                     step = -1;
@@ -125,14 +131,14 @@ namespace GradientTriangle
                     {
                         yi += step;
                         di += 2 * (dy - dx);
-                        doubleR += stepR;
-                        doubleG += stepG;
-                        doubleB += stepB;
                     }
                     else
                     {
                         di += 2 * dy;
                     }
+                    doubleR += stepR;
+                    doubleG += stepG;
+                    doubleB += stepB;
                 }
             }
         }
