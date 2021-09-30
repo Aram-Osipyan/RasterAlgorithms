@@ -1,0 +1,10 @@
+C:\Users\anast\source\repos\GradientTriangle\GradientTriangle\bin\Debug\GradientTriangle.exe.config
+C:\Users\anast\source\repos\GradientTriangle\GradientTriangle\bin\Debug\GradientTriangle.exe
+C:\Users\anast\source\repos\GradientTriangle\GradientTriangle\bin\Debug\GradientTriangle.pdb
+C:\Users\anast\source\repos\GradientTriangle\GradientTriangle\obj\Debug\GradientTriangle.csprojAssemblyReference.cache
+C:\Users\anast\source\repos\GradientTriangle\GradientTriangle\obj\Debug\GradientTriangle.Form1.resources
+C:\Users\anast\source\repos\GradientTriangle\GradientTriangle\obj\Debug\GradientTriangle.Properties.Resources.resources
+C:\Users\anast\source\repos\GradientTriangle\GradientTriangle\obj\Debug\GradientTriangle.csproj.GenerateResource.cache
+C:\Users\anast\source\repos\GradientTriangle\GradientTriangle\obj\Debug\GradientTriangle.csproj.CoreCompileInputs.cache
+C:\Users\anast\source\repos\GradientTriangle\GradientTriangle\obj\Debug\GradientTriangle.exe
+C:\Users\anast\source\repos\GradientTriangle\GradientTriangle\obj\Debug\GradientTriangle.pdb
