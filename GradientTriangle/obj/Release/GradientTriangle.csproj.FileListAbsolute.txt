@@ -8,3 +8,13 @@ C:\Users\anast\source\repos\GradientTriangle\GradientTriangle\obj\Release\Gradie
 C:\Users\anast\source\repos\GradientTriangle\GradientTriangle\obj\Release\GradientTriangle.csproj.CoreCompileInputs.cache
 C:\Users\anast\source\repos\GradientTriangle\GradientTriangle\obj\Release\GradientTriangle.exe
 C:\Users\anast\source\repos\GradientTriangle\GradientTriangle\obj\Release\GradientTriangle.pdb
+C:\Users\sadaf\RasterAlgorithms\GradientTriangle\bin\Release\GradientTriangle.exe.config
+C:\Users\sadaf\RasterAlgorithms\GradientTriangle\bin\Release\GradientTriangle.exe
+C:\Users\sadaf\RasterAlgorithms\GradientTriangle\bin\Release\GradientTriangle.pdb
+C:\Users\sadaf\RasterAlgorithms\GradientTriangle\obj\Release\GradientTriangle.csproj.AssemblyReference.cache
+C:\Users\sadaf\RasterAlgorithms\GradientTriangle\obj\Release\GradientTriangle.Form1.resources
+C:\Users\sadaf\RasterAlgorithms\GradientTriangle\obj\Release\GradientTriangle.Properties.Resources.resources
+C:\Users\sadaf\RasterAlgorithms\GradientTriangle\obj\Release\GradientTriangle.csproj.GenerateResource.cache
+C:\Users\sadaf\RasterAlgorithms\GradientTriangle\obj\Release\GradientTriangle.csproj.CoreCompileInputs.cache
+C:\Users\sadaf\RasterAlgorithms\GradientTriangle\obj\Release\GradientTriangle.exe
+C:\Users\sadaf\RasterAlgorithms\GradientTriangle\obj\Release\GradientTriangle.pdb

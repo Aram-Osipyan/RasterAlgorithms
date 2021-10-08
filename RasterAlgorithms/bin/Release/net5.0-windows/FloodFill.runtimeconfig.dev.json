@@ -1,8 +1,9 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\osipy\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\osipy\\.nuget\\packages"
+      "C:\\Users\\sadaf\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\sadaf\\.nuget\\packages",
+      "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ]
   }
 }

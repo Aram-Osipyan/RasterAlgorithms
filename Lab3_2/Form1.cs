@@ -19,39 +19,59 @@ namespace Lab3_2
         {
             InitializeComponent();
             pictureBox1.Image = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+           
         }
 
 
-        private void Bresenham(Pen pen, int x0, int y0, int x1, int y1)
+        private void Bresenham(Pen pen, int x1, int y1, int x2, int y2)
         {
-           
-            var bm = pictureBox1.Image as Bitmap;
-            int deltaX = Math.Abs(x1 - x0);
-            int deltaY = Math.Abs(y1 - y0);
 
-            int signX = x0 < x1 ? 1 : -1;
-            int signY = y0 < y1 ? 1 : -1;
+            var bmp = (pictureBox1.Image as Bitmap);
+            double dx = Math.Abs(x2 - x1);
+            double dy = Math.Abs(y2 - y1);
+            double gradient = dy / dx; //угловой коэффициент
+            int signX = Math.Sign(x2 - x1);
+            int singY = Math.Sign(y2 - y1);
+            
+            int x = x1;
+            int y = y1;
 
-            int error = deltaX - deltaY;
-
-            bm.SetPixel(x1, y1, pen.Color);
-            pictureBox1.Invalidate();
-
-            while(x0 != x1 || y0 != y1)
+            if(gradient <= 1)
             {
-                bm.SetPixel(x0, y0, pen.Color);
-                pictureBox1.Invalidate();
-
-                int error2 = 2 * error;
-                if(error2 > -deltaY)
+                double d = 2 * dy - dx;
+                while(x != x2 || y != y2)
                 {
-                    error -= deltaY;
-                    x0 += signX;
+                    if(d < 0)
+                    {
+                        d += 2 * dy;
+                    }
+                    else 
+                    {
+                        y += singY;
+                        d += 2 * (dy - dx);
+                    }
+                    x += signX;
+                    bmp.SetPixel(x,y,pen.Color);
+                    pictureBox1.Invalidate();
                 }
-                if(error2 < deltaX)
+            }
+            if(gradient > 1)
+            {
+               double d = 2 * dx - dy;
+                while(x != x2 || y != y2)
                 {
-                    error += deltaX;
-                    y0 += signY;
+                    if(d < 0)
+                    {
+                        d += 2 * dx;
+                    }
+                    else 
+                    {
+                        x += signX;
+                        d += 2 * (dx - dy);
+                    }
+                    y += singY;
+                    bmp.SetPixel(x, y, pen.Color);
+                    pictureBox1.Invalidate();
                 }
             }
         }
