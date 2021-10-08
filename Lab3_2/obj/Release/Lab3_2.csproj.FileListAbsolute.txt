@@ -1,0 +1,10 @@
+C:\Users\osipy\source\repos\RasterAlgorithms\Lab3_2\bin\Release\Lab3_2.exe.config
+C:\Users\osipy\source\repos\RasterAlgorithms\Lab3_2\bin\Release\Lab3_2.exe
+C:\Users\osipy\source\repos\RasterAlgorithms\Lab3_2\bin\Release\Lab3_2.pdb
+C:\Users\osipy\source\repos\RasterAlgorithms\Lab3_2\obj\Release\Lab3_2.csproj.AssemblyReference.cache
+C:\Users\osipy\source\repos\RasterAlgorithms\Lab3_2\obj\Release\Lab3_2.Form1.resources
+C:\Users\osipy\source\repos\RasterAlgorithms\Lab3_2\obj\Release\Lab3_2.Properties.Resources.resources
+C:\Users\osipy\source\repos\RasterAlgorithms\Lab3_2\obj\Release\Lab3_2.csproj.GenerateResource.cache
+C:\Users\osipy\source\repos\RasterAlgorithms\Lab3_2\obj\Release\Lab3_2.csproj.CoreCompileInputs.cache
+C:\Users\osipy\source\repos\RasterAlgorithms\Lab3_2\obj\Release\Lab3_2.exe
+C:\Users\osipy\source\repos\RasterAlgorithms\Lab3_2\obj\Release\Lab3_2.pdb

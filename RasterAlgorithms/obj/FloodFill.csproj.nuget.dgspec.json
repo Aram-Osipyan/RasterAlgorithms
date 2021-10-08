@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "G:\\4 курс\\КомпГрафика\\RasterAlgorithms\\RasterAlgorithms\\FloodFill.csproj": {}
+    "C:\\Users\\osipy\\source\\repos\\RasterAlgorithms\\RasterAlgorithms\\FloodFill.csproj": {}
   },
   "projects": {
-    "G:\\4 курс\\КомпГрафика\\RasterAlgorithms\\RasterAlgorithms\\FloodFill.csproj": {
+    "C:\\Users\\osipy\\source\\repos\\RasterAlgorithms\\RasterAlgorithms\\FloodFill.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\4 курс\\КомпГрафика\\RasterAlgorithms\\RasterAlgorithms\\FloodFill.csproj",
+        "projectUniqueName": "C:\\Users\\osipy\\source\\repos\\RasterAlgorithms\\RasterAlgorithms\\FloodFill.csproj",
         "projectName": "FloodFill",
-        "projectPath": "G:\\4 курс\\КомпГрафика\\RasterAlgorithms\\RasterAlgorithms\\FloodFill.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "G:\\4 курс\\КомпГрафика\\RasterAlgorithms\\RasterAlgorithms\\obj\\",
+        "projectPath": "C:\\Users\\osipy\\source\\repos\\RasterAlgorithms\\RasterAlgorithms\\FloodFill.csproj",
+        "packagesPath": "C:\\Users\\osipy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\osipy\\source\\repos\\RasterAlgorithms\\RasterAlgorithms\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\osipy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -57,7 +57,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

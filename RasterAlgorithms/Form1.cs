@@ -74,57 +74,80 @@ namespace RasterAlgorithms
                     break;
             }
         }
+        private Point nearPixel(int xsource, int ysource, int direction)
+        {
+
+            switch (direction)
+            {
+                case 0:
+                    return new Point(xsource + 1, ysource);
+                case 1:
+                    return new Point(xsource + 1, ysource - 1);
+                case 2:
+                    return new Point(xsource, ysource - 1);
+                case 3:
+                    return new Point(xsource - 1, ysource - 1);
+                case 4:
+                    return new Point(xsource - 1, ysource);
+                case 5:
+                    return new Point(xsource - 1, ysource + 1);
+                case 6:
+                    return new Point(xsource, ysource + 1);
+                case 7:
+                    return new Point(xsource + 1, ysource + 1);
+                default:
+                    throw new Exception("wtf?");
+            }
+        }
+        private List<Point> FindBorder(Bitmap image, int x, int y)
+        {
+            List<Point> points = new List<Point>();
+
+            Color c = image.GetPixel(x, y + 1);
+            var startPoint = new Point(x, y);
+            int direction = 5;
+            points.Add(startPoint);
+
+            while (true)
+            {
+                Point point = new Point(-1, -1);
+                for (int i = 0; i < 8; i++)
+                {
+                    point = nearPixel(x, y, ((direction - i) + 8) % 8);
+                    if (image.GetPixel(point.X, point.Y) != c)
+                    {
+                        direction = (direction - i + 10) % 8;
+                        points.Add(new Point(point.X, point.Y));
+                        x = point.X;
+                        y = point.Y;
+                        break;
+                    }
+                }
+                if (startPoint.X == point.X && startPoint.Y == point.Y && (direction - 5 + 8) % 8 < 4)
+                    return points;
+            }
+        }
 
         private void CFill(Point location)
         {
             Color freeAreaColor = _mainBmp.GetPixel(location.X, location.Y);
-            Queue<(int X, int Y)> points = new Queue<(int X, int Y)>();
-            points.Enqueue((location.X, location.Y));
             Bitmap tempBmp = new Bitmap(_mainBmp);
+            Console.WriteLine("dfkfdkj");
+            var startColor = tempBmp.GetPixel(location.X, location.Y);
+            var nextPixelColor = tempBmp.GetPixel(location.X, location.Y);
+            var nextY = location.Y;
 
-            while (points.Count != 0)
+            while (startColor == nextPixelColor)
             {
-                var currPoint = points.Dequeue();
-                if (currPoint.Y > pictureBox1.Height || currPoint.Y < 0
-                    || tempBmp.GetPixel(currPoint.X, currPoint.Y) != freeAreaColor)
-                {
-                    continue;
-                }
-                //right border finding            
-                var rightBorder = currPoint;
-                for (; rightBorder.X < pictureBox1.Width; rightBorder.X += 1)
-                {
-                    Color getPix = _mainBmp.GetPixel(rightBorder.X, rightBorder.Y);
-                    if (getPix != freeAreaColor)
-                    {
-                        break;
-                    }
-                    
-                    points.Enqueue((rightBorder.X, rightBorder.Y + 1));
-                    points.Enqueue((rightBorder.X, rightBorder.Y - 1));
-                    tempBmp.SetPixel(rightBorder.X, rightBorder.Y, _currentColor);
-                }
-                _mainBmp.SetPixel(rightBorder.X, rightBorder.Y, _currentColor);
-                // left border 
-                var leftBorder = currPoint;
-                leftBorder.X -= 1;
-
-                for (; leftBorder.X > 0; --leftBorder.X)
-                {
-                    Color getPix = _mainBmp.GetPixel(leftBorder.X, leftBorder.Y);
-
-                    if (getPix != freeAreaColor)
-                    {
-                        break;
-                    }
-                    tempBmp.SetPixel(leftBorder.X, leftBorder.Y, _currentColor);
-                    points.Enqueue((leftBorder.X, leftBorder.Y + 1));
-                    points.Enqueue((leftBorder.X, leftBorder.Y - 1));
-                }
-                _mainBmp.SetPixel(leftBorder.X, leftBorder.Y, _currentColor);
+                --nextY;
+                nextPixelColor = tempBmp.GetPixel(location.X, nextY);
+            }
+            List<Point> t = FindBorder(tempBmp, location.X, nextY);
+            foreach (var point in t)
+            {
+                _mainBmp.SetPixel(point.X, point.Y, _currentColor);
             }
         }
-
         private void BFill(Point location)
         {
             Color freeAreaColor = _mainBmp.GetPixel(location.X, location.Y);
@@ -142,6 +165,8 @@ namespace RasterAlgorithms
                 }
                 //right border finding            
                 var rightBorder = currPoint;
+                int xi = _fillPicture.Width / 2;
+                
                 for (; rightBorder.X < pictureBox1.Width; rightBorder.X += 1)
                 {
                     Color getPix = _mainBmp.GetPixel(rightBorder.X, rightBorder.Y);
@@ -150,16 +175,16 @@ namespace RasterAlgorithms
                         break;
                     }
                     Color fillColor =
-                        _fillPicture.GetPixel(rightBorder.X % _fillPicture.Width, rightBorder.Y % _fillPicture.Height);
+                        _fillPicture.GetPixel(Math.Abs(rightBorder.X - location.X + _fillPicture.Width / 2) % _fillPicture.Width, Math.Abs(currPoint.Y - location.Y + _fillPicture.Height / 2) % _fillPicture.Height);
                     _mainBmp.SetPixel(rightBorder.X, rightBorder.Y, fillColor);
                     points.Enqueue((rightBorder.X, rightBorder.Y + 1));
                     points.Enqueue((rightBorder.X, rightBorder.Y - 1));
                 }
-
+                int xli = _fillPicture.Width / 2;
                 // left border 
                 var leftBorder = currPoint;
                 leftBorder.X -= 1;
-
+                
                 for (; leftBorder.X > 0; --leftBorder.X)
                 {
                     Color getPix = _mainBmp.GetPixel(leftBorder.X, leftBorder.Y);
@@ -168,10 +193,11 @@ namespace RasterAlgorithms
                     {
                         break;
                     }
-                    Color fillColor = _fillPicture.GetPixel(leftBorder.X % _fillPicture.Width, leftBorder.Y % _fillPicture.Height);
+                    Color fillColor = _fillPicture.GetPixel(Math.Abs(leftBorder.X - location.X + _fillPicture.Width / 2) % _fillPicture.Width, Math.Abs(currPoint.Y - location.Y + _fillPicture.Height / 2) % _fillPicture.Height);
                     _mainBmp.SetPixel(leftBorder.X, leftBorder.Y, fillColor);
                     points.Enqueue((leftBorder.X, leftBorder.Y + 1));
                     points.Enqueue((leftBorder.X, leftBorder.Y - 1));
+                    xli--;
                 }
             }
 

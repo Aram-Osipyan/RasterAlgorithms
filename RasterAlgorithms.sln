@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FloodFill", "RasterAlgorith
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GradientTriangle", "GradientTriangle\GradientTriangle.csproj", "{9E6CF85C-B732-4CAC-9F1E-DC5E843951BA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab3_2", "Lab3_2\Lab3_2.csproj", "{7F6246B3-E894-4DE0-B058-E88E54B50D0A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9E6CF85C-B732-4CAC-9F1E-DC5E843951BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E6CF85C-B732-4CAC-9F1E-DC5E843951BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E6CF85C-B732-4CAC-9F1E-DC5E843951BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F6246B3-E894-4DE0-B058-E88E54B50D0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F6246B3-E894-4DE0-B058-E88E54B50D0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F6246B3-E894-4DE0-B058-E88E54B50D0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F6246B3-E894-4DE0-B058-E88E54B50D0A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
