@@ -29,7 +29,7 @@ namespace Lab3_2
             var bmp = (pictureBox1.Image as Bitmap);
             double dx = Math.Abs(x2 - x1);
             double dy = Math.Abs(y2 - y1);
-            double gradient = dy / dx; //угловой коэффициент
+            double gradient = dy / dx; 
             int signX = Math.Sign(x2 - x1);
             int singY = Math.Sign(y2 - y1);
             
